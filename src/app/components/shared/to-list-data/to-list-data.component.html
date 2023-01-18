@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>COLOR</th>
+        <th>YEAR</th>
+    </tr>
+    <tr *ngFor="let color of arrayColors; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{color.name}}</td>
+        <td><input type="color" [value]="color.color" disabled></td>
+        <td>{{color.year}}</td>
+    </tr>
+
+    <br>
+
+</table>

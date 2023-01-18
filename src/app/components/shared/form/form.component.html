@@ -1,0 +1,24 @@
+<section class="data-container">
+    <div>
+        <form class="formulario">
+            <label for="name">Name: </label>
+            <input id="name" type="text" [formControl]="name" placeholder="color name">
+            <label for="anio">Año: </label>
+            <input id="anio" type="number" [formControl]="anio" placeholder="año">
+
+            <p>Seleccione su color:
+                <input type="color" id="head" name="head" [value]="color" [formControl]="color">
+            </p>
+
+            <button class="btn" type="button" (click)="enviarData()"
+                [disabled]="name.value == '' || anio.value ==''" [ngStyle]="{'background': color.value, 'color':'gray'}">enviarData</button>
+
+            <div *ngIf="id != '' && createdAt != ''">
+                <p>{{id}}</p>
+                <p>{{createdAt}}</p>
+            </div>
+        </form>
+
+    </div>
+    <app-to-list-data [data]="this.users"></app-to-list-data>
+</section>
